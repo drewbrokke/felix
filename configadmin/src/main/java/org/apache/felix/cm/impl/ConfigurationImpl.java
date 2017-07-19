@@ -187,10 +187,10 @@ public class ConfigurationImpl extends ConfigurationBase
 
     public void delete() throws IOException
     {
-        this.isDeleted = true;
         getPersistenceManager().delete( this.getPidString() );
         getConfigurationManager().setDynamicBundleLocation( this.getPidString(), null );
         getConfigurationManager().deleted( this );
+        this.isDeleted = true;
     }
 
 
